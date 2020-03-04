@@ -21,24 +21,26 @@ public class AppStarter {
             Scanner q = new Scanner(System.in);
             BufferedReader br = new BufferedReader(new FileReader(q.next()));
             String st;
-            ParkingSystemApp parkingSystemApp=new ParkingSystemApp();
+            ParkingSystemApp parkingSystemApp=null;
             while ((st = br.readLine()) != null)
             {
                 String []lineTuples={};
                 lineTuples=st.split(" ");
                 switch (lineTuples[0]){
-                    case "create_slot" :System.out.println(lineTuples[1]);
+                    case "create_slot" :
+                        parkingSystemApp=new ParkingSystemApp(Integer.parseInt(lineTuples[1]));
+                        //System.out.println(lineTuples[1]);
                         break;
                     case "park" :
-                        System.out.println(lineTuples[1]);
+                        //System.out.println(lineTuples[1]);
                        parkingSystemApp.park(lineTuples[1]);
                        break;
                     case "leave" :
-                        parkingSystemApp.park(lineTuples[1]);
+                        //parkingSystemApp.park(lineTuples[1]);
                         parkingSystemApp.leaveSlot(lineTuples[1],Integer.parseInt(lineTuples[2]));
                         break;
                     case "status" :
-                        System.out.println(lineTuples[0]);
+                        //System.out.println(lineTuples[0]);
                         parkingSystemApp.status();
                         break;
                     default:System.out.println("Invalid Tuple");

@@ -32,9 +32,9 @@ public class ParkingSystemApp {
     private double totalFee = 0;
 
 
-    public ParkingSystemApp()
+    public ParkingSystemApp(Integer numberOfSlots)
     {
-        ParkingLot lot = new ParkingLot();
+        ParkingLot lot = new ParkingLot(numberOfSlots);
         slots = lot.getParkingSlots();
         ticketList = new ArrayList(); // to save tickets
     }

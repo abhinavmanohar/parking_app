@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class ParkingLot
 {
-    private static final int numberOfSlots = 5;
+    private int numberOfSlots;
 
     private ArrayList<ParkingSlot> listOfSlots = null;
 
-    public ParkingLot()
+    public ParkingLot(Integer numberOfSlots)
     {
+        this.numberOfSlots=numberOfSlots;
         listOfSlots = new ArrayList();
     }
 
@@ -20,7 +21,7 @@ public class ParkingLot
      */
     public ArrayList<ParkingSlot> getParkingSlots()
     {
-        for (int i = 1; i <= numberOfSlots; i++)
+        for (int i = 1; i <= this.numberOfSlots; i++)
         {
             ParkingSlot slot = new ParkingSlot(i, true);
             listOfSlots.add(slot);
